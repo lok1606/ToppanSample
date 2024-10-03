@@ -5,7 +5,7 @@ files:
     destination: /Apps/fastapi/
 hooks:
   ApplicationStart:
-    - location: uvicorn --app-dir /Apps/fastapi app:app --host 0.0.0.0 --port 8000
+    - location: ~/.local/bin/uvicorn --app-dir /Apps/fastapi app:app --host 0.0.0.0 --port 8000
       timeout: 300
-      runas: root
+      runas: ec2-user
 
