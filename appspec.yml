@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /fastapi
-    destination: /Apps/
+    destination: /Apps/fastapi/
 hooks:
   ApplicationStart:
     - location: uvicorn --app-dir /Apps/fastapi app:app --host 0.0.0.0 --port 8000
