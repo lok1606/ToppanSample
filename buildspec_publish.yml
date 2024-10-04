@@ -1,0 +1,14 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo pre-build
+      - pip3 install twine
+  build:
+    commands:
+    echo build
+      - export TWINE_USERNAME=aws
+      - export TWINE_PASSWORD=`aws codeartifact get-authorization-token --domain ${CODEARTIFACT_DOMAIN} --query authorizationToken --output text`
+      - export TWINE_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain ${CODEARTIFACT_DOMAIN} --repository ${CODEARTIFACT_REPO} --format pypi --query repositoryEndpoint --output text`
+      - twine upload --repository codeartifact dist/fastapi-1.0.0.tar.gz
