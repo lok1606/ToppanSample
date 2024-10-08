@@ -2,11 +2,12 @@ import unittest
 from fastapi.testclient import TestClient
 from fastapiSample.app import app
 
+
 class AppTests(unittest.TestCase):
-    client = TestClient(app)
     def test_app(self):
+        client = TestClient(app)
         response = client.get("/health")
-		self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 200)
 
 
 def suite():
