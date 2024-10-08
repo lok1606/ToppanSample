@@ -13,7 +13,7 @@ version = read_file("VERSION")
 requirements = read_requirements("requirements.txt")
 
 setup(
-    name = 'fastapi',
+    name = 'fastapiSample',
     version = version,
     author = 'Lok',
     author_email = 'lok@hahahahahah.com',

@@ -3,17 +3,15 @@ version: 0.2
 phases:
   pre_build:
     commands:
-      - echo build
+      - echo pre-build
   build:
     commands:
       - echo build
+      - pip install --no-cache-dir -r requirements.txt
+      - pytest test/test.py
   post_build:
     commands:
-      - echo Build completed on `date`
-
-artifacts:
-  files:
-    - '**/*'
+      - echo Test completed on `date`
     
 reports:
   coverage:

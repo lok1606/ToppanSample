@@ -11,4 +11,7 @@ phases:
       - export TWINE_USERNAME=aws
       - export TWINE_PASSWORD=`aws codeartifact get-authorization-token --domain ${CODEARTIFACT_DOMAIN} --query authorizationToken --output text`
       - export TWINE_REPOSITORY_URL=`aws codeartifact get-repository-endpoint --domain ${CODEARTIFACT_DOMAIN} --repository ${CODEARTIFACT_REPO} --format pypi --query repositoryEndpoint --output text`
-      - twine upload --repository codeartifact dist/fastapi-1.0.0.tar.gz
+      - twine upload --repository codeartifact dist/fastapisample-1.0.0.tar.gz
+   post_build:
+    commands:
+      - echo Publish completed on `date`

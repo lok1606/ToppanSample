@@ -1,8 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - source: /fastapi
-    destination: /Apps/fastapi/
+  - source: /fastapiSample
+    destination: /Apps/fastapiSample/
 hooks:
   ApplicationStart:
     - location: scripts/start_server.sh
