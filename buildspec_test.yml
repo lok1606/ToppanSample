@@ -8,7 +8,16 @@ phases:
     commands:
       - echo build
       - pip install --no-cache-dir -r requirements.txt
-      - pytest test/test.py
+      - pytest 
+        --html=test-reports/report.html 
+        --self-contained-html
+        -s
+        -v
+        --cov=dspt 
+        --cov-report=html:test-reports/coverage 
+        --junitxml=test-reports/junit.xml 
+        --log-file=test-reports/logs.txt 
+        test/test.py
   post_build:
     commands:
       - echo Test completed on `date`
