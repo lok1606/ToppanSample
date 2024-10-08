@@ -5,3 +5,4 @@ databases
 asyncpg
 pytest
 pytest-html
+pytest-cov
