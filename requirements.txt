@@ -4,3 +4,4 @@ python-dotenv
 databases
 asyncpg
 pytest
+pytest-html
