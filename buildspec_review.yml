@@ -8,6 +8,9 @@ env:
     Project: sonarcloud:Project
 
 phases:
+  install:
+    runtime-versions:
+      java: corretto8
   pre_build:
     commands:
       - apt-get update
