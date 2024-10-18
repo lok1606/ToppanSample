@@ -18,6 +18,9 @@ phases:
       - apt-get -y install maven
       - wget https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-6.2.1.4610-linux-x64.zip
       - unzip ./sonar-scanner-cli-6.2.1.4610-linux-x64.zip
+      - ls -l
+      - ls -l ./sonar-scanner-cli-6.2.1.4610-linux-x64/bin/
+      - chmod -R 755 ./sonar-scanner-cli-6.2.1.4610-linux-x64
       - export PATH=$PATH:./sonar-scanner-cli-6.2.1.4610-linux-x64/bin/
   build:
     commands:
